@@ -8,7 +8,7 @@ import (
 
 // Meta represents a key-value metatag on the webpage.
 type Meta struct {
-	Prop  string
+	Name  string
 	Value string
 }
 
@@ -41,13 +41,13 @@ func metatagsToMetaList(metatags []*html.Node) []*Meta {
 		for _, attr := range m.Attr {
 			switch attr.Key {
 			case "property", "name":
-				meta.Prop = attr.Val
+				meta.Name = attr.Val
 			case "content":
 				meta.Value = attr.Val
 			}
 		}
 
-		if meta.Prop != "" && meta.Value != "" {
+		if meta.Name != "" && meta.Value != "" {
 			result = append(result, meta)
 		}
 	}

@@ -64,7 +64,7 @@ func TestRead(t *testing.T) {
 
 	assert.Equal(len(metas), len(results))
 	for i, m := range metas {
-		assert.Equal(m.Prop, results[i].Prop)
+		assert.Equal(m.Name, results[i].Name)
 		assert.Equal(m.Value, results[i].Value)
 	}
 }
