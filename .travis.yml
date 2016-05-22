@@ -8,10 +8,10 @@ before_install:
   - go get github.com/mattn/goveralls
 
 install:
-  - go get -t -v .
+  - go get -t -v ./...
 
 script:
-  - go test -v -covermode=count -coverprofile=coverage.out
+  - make test
 
 after_success:
-  - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken cAB56Ntrsjw4nrsp051VYxGlSCnAmFOVb
+  - goveralls -coverprofile=coverage.txt -service=travis-ci -repotoken cAB56Ntrsjw4nrsp051VYxGlSCnAmFOVb
