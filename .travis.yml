@@ -1,0 +1,17 @@
+language: go
+
+go:
+  - 1.6
+
+before_install:
+  - go get github.com/axw/gocov/gocov
+  - go get github.com/mattn/goveralls
+
+install:
+  - go get -t -v .
+
+script:
+  - go test -v -covermode=count -coverprofile=coverage.out
+
+after_success:
+  - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken cAB56Ntrsjw4nrsp051VYxGlSCnAmFOVb
