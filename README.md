@@ -1,4 +1,4 @@
-# pagecard [![Build Status](https://travis-ci.org/mvader/pagecard.svg)](https://travis-ci.org/mvader/pagecard) [![Coverage Status](https://coveralls.io/repos/mvader/pagecard/badge.svg?branch=master&service=github)](https://coveralls.io/github/mvader/pagecard?branch=master) [![GoDoc](https://godoc.org/github.com/mvader/pagecard?status.svg)](http://godoc.org/github.com/mvader/pagecard)
+# pagecard [![Build Status](https://travis-ci.org/mvader/pagecard.svg)](https://travis-ci.org/mvader/pagecard) [![Coverage Status](https://coveralls.io/repos/github/mvader/pagecard/badge.svg?branch=master)](https://coveralls.io/github/mvader/pagecard?branch=master) [![GoDoc](https://godoc.org/github.com/mvader/pagecard?status.svg)](http://godoc.org/github.com/mvader/pagecard)
 
 Golang library to retrieve some useful data to represent a webpage in other applications from metadata exposed by the webpage.
 To do so, this library reads all the `meta` tags on the page and builds a data structure containing the information from OpenGraph, Twitter and some other useful tags.
