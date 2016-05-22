@@ -131,7 +131,7 @@ func NewCard(meta []*content.Meta) (*Card, error) {
 	}
 
 	for _, m := range meta {
-		if strings.HasPrefix(appPrefix, m.Name) {
+		if strings.HasPrefix(m.Name, appPrefix) {
 			if card.Type != AppCard {
 				continue
 			}
@@ -164,7 +164,7 @@ func NewCard(meta []*content.Meta) (*Card, error) {
 			}
 		}
 
-		if strings.HasPrefix(playerPrefix, m.Name) {
+		if strings.HasPrefix(m.Name, playerPrefix) || m.Name == playerName {
 			if card.Type != PlayerCard {
 				continue
 			}
@@ -233,7 +233,7 @@ func filterTwitterMeta(meta []*content.Meta) (CardType, []*content.Meta, error) 
 
 	for _, m := range meta {
 		if strings.HasPrefix(m.Name, twitterPrefix) {
-			m.Name = m.Name[len(twittermeta):]
+			m.Name = m.Name[len(twitterPrefix):]
 			if m.Name == cardName {
 				typ, err = cardType(m.Value)
 				if err != nil {
